@@ -9,8 +9,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/main" element={<MainScreen />} />
+        <Route path="/codeleap-engineering-test" element={<HomePage />} />
+        <Route path="/codeleap-engineering-test/main" element={<MainScreen />} />
       </Routes>
     </BrowserRouter>
   );

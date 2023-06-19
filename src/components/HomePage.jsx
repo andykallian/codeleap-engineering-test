@@ -25,7 +25,7 @@ const HomePage = () => {
       console.log('Username entered:', username);
 
       if (username === 'AndyKallian') {
-        navigate('/main');
+        navigate('/codeleap-engineering-test/main');
       }
     }
   };
