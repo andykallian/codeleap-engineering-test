@@ -1,0 +1,41 @@
+
+#root{
+  /* font-size: 62.5%; 
+  --Very-Dark-Gray: hsl(0, 0%, 17%);
+  --Dark-Gray: hsl(0, 0%, 59%);
+   1rem = 10px *
+  my monitor resolution: 1360x768. 136rem x 76,8rem = */
+  display: flex;
+  
+}
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* position: absolute; */
+  /* left: 0px;
+  top: 0px; */
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+
+  
+
+  background: #DDDDDD;
+}
+
+/* code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', 'Roboto', monospace;
+} */
