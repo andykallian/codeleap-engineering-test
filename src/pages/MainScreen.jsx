@@ -12,10 +12,11 @@ import
     RetangleTitle,
 } from '../components/Styles';
 import Post from '../components/Post';
+import { createPost, fetchPosts } from '../actions';
 
 import React, { useState, useEffect, useReducer, useContext } from 'react';
 import { UserContext } from '../context/UserContext';
-import { createPost, fetchPosts } from '../actions';
+import { useNavigate } from 'react-router-dom';
 
 
 const postsReducer = (state = [], action) => {
@@ -35,48 +36,49 @@ const MainScreen = () => {
     const [newPostTitle, setNewPostTitle] = useState('');
     const [newPostContent, setNewPostContent] = useState('');
     const [newPosts, setNewPosts] = useState([]);
+    const navigate = useNavigate();
 
     const [posts, dispatch] = useReducer(postsReducer, []);
 
 
-    const { currentUser } = useContext(UserContext);
+    const { currentUser, setCurrentUsername } = useContext(UserContext);
     
-
-
     const handleCreatePost = async (e) => {
-        e.preventDefault();
-    
-        const postData = {
-          username: currentUser,
-          title: newPostTitle,
-          content: newPostContent,
-        };
-    
-        const response = await createPost(postData);
-    
-        if (response) {
-          console.log('Post criado com sucesso');
-    
-          fetchPostsData();
-    
-          setNewPostTitle('');
-          setNewPostContent('');
-
-        }
+      e.preventDefault();
+  
+      const postData = {
+        username: currentUser,
+        title: newPostTitle,
+        content: newPostContent,
       };
+  
+      const response = await createPost(postData);
+  
+      if (response) {
+        fetchPostsData();
+        setNewPostTitle('');
+        setNewPostContent('');
+      }
+    };
+
+    const handleLogout = () =>{
+      setCurrentUsername('')
+      navigate('/codeleap-engineering-test')
+    }
+    
 
     const fetchPostsData = async () => {
-        try {
+      try {
         const postsData = await fetchPosts();
         dispatch({ type: 'FETCH_POSTS', payload: postsData });
         setNewPosts(postsData.results);
-        } catch (error) {
+      } catch (error) {
         console.error('Erro ao buscar os posts:', error);
-        }
+      }
     };
 
     useEffect(() => {
-        fetchPostsData();
+      fetchPostsData();
     }, [posts]);
 
   return (
@@ -85,6 +87,7 @@ const MainScreen = () => {
     
         <TopRetangle>
             <RetangleTitle>CodeLeap Network</RetangleTitle>
+            <Button background={'#FF5151'} color={'#FFFFFF'} onClick={handleLogout}>LOGOUT</Button>
         </TopRetangle>
         <Form width={'95%'}>
             <FlexWrapper gap={'20px'} background={'#FFFFFF'} padding={'16px'} borderradius={'16px'} direction={'column'} border={'1px solid #999999'}>

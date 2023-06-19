@@ -1,5 +1,12 @@
 import React, { useContext, useState } from 'react';
-import { LoginContainer, TitleContainer, LabelContainer, InputContainer, ButtonContainer, FlexWrapper } from '../components/Styles';
+import { 
+    LoginContainer, 
+    TitleContainer, 
+    LabelContainer, 
+    InputContainer, 
+    ButtonContainer, 
+    FlexWrapper 
+} from '../components/Styles';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../context/UserContext';
 
@@ -13,10 +20,8 @@ const CreateUser = () => {
   };
 
   const handleRegister = () => {
-    if (newUser !== '') {
-      addUser(newUser);
-      navigate('/codeleap-engineering-test');
-    }
+    newUser !== '' && addUser(newUser)
+    navigate('/codeleap-engineering-test');
   };
 
   const handleCancel = () => {

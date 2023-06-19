@@ -165,6 +165,10 @@ export const RetangleTitle = styled.h1`
 
 export const TopRetangle = styled.div`
 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   height: 80px;
   padding: 27px 37px;
 
