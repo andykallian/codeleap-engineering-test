@@ -63,7 +63,7 @@ const EditPostModal = ({ currentPost, closeModal }) => {
 
   return (
     <ModalBackground width={'612px'} height={'32px'} top={'364px'} left={'630px'}>
-        <Form>
+        <Form width={'660px'}>
             <FlexWrapper gap={'20px'} background={'#FFFFFF'} padding={'16px'} borderradius={'16px'} direction={'column'} border={'1px solid #999999'}>
                 <NewPostQuestion>Edit Item</NewPostQuestion>
 

@@ -142,6 +142,11 @@ export const FlexWrapper = styled.div`
 
 export const RetangleTitle = styled.h1`
 
+  word-wrap: break-word;
+  max-width: 70%;
+
+  
+
   color: #FFFFFF;
   font-family: 'Roboto';
   
@@ -161,9 +166,13 @@ export const TopRetangle = styled.div`
 
 export const TopRetanglePost = styled.div`
 
+
+
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 
   height: 80px;
   padding: 27px 37px;
@@ -185,6 +194,11 @@ export const Form = styled.form`
   flex-direction: column;
 
   width: 95%;
+
+  ${({ width }) => width && css`
+    width: ${width};
+  `}
+
   align-self: center;
   background: #FFFFFF;
 

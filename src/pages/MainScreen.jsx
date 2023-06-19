@@ -13,7 +13,8 @@ import
 } from '../components/Styles';
 import Post from '../components/Post';
 
-import React, { useState, useEffect, useReducer } from 'react';
+import React, { useState, useEffect, useReducer, useContext } from 'react';
+import { UserContext } from '../context/UserContext';
 import { createPost, fetchPosts } from '../actions';
 
 
@@ -33,33 +34,36 @@ const MainScreen = () => {
 
     const [newPostTitle, setNewPostTitle] = useState('');
     const [newPostContent, setNewPostContent] = useState('');
+    const [newPosts, setNewPosts] = useState([]);
 
     const [posts, dispatch] = useReducer(postsReducer, []);
 
-    const [newPosts, setNewPosts] = useState([]);
+
+    const { currentUser } = useContext(UserContext);
+    
 
 
     const handleCreatePost = async (e) => {
         e.preventDefault();
-
+    
         const postData = {
-            username: 'AndyKallian',
-            title: newPostTitle,
-            content: newPostContent,
+          username: currentUser,
+          title: newPostTitle,
+          content: newPostContent,
         };
-
+    
         const response = await createPost(postData);
-
+    
         if (response) {
-        console.log('Post criado com sucesso');
+          console.log('Post criado com sucesso');
+    
+          fetchPostsData();
+    
+          setNewPostTitle('');
+          setNewPostContent('');
 
-        fetchPostsData();
-
-        setNewPostTitle('');
-        setNewPostContent('');
-        console.log(newPosts);
         }
-    };
+      };
 
     const fetchPostsData = async () => {
         try {
@@ -82,7 +86,7 @@ const MainScreen = () => {
         <TopRetangle>
             <RetangleTitle>CodeLeap Network</RetangleTitle>
         </TopRetangle>
-        <Form>
+        <Form width={'95%'}>
             <FlexWrapper gap={'20px'} background={'#FFFFFF'} padding={'16px'} borderradius={'16px'} direction={'column'} border={'1px solid #999999'}>
                 <NewPostQuestion>What's on your mind?</NewPostQuestion>
 
@@ -92,7 +96,7 @@ const MainScreen = () => {
                     type="text"
                     id="postTitle"
                     placeholder="Hello World"
-                    value={newPostTitle.slice(0, 40)}
+                    value={newPostTitle.slice(0, 70)}
                     onChange={(e) => setNewPostTitle(e.target.value)}
                     required
                     />
