@@ -8,8 +8,8 @@ export const LoginContainer = styled.div`
   
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 10px;
-  justify-self: center;
 
   padding: 24px;
 
@@ -59,12 +59,20 @@ export const ButtonContainer = styled.button`
   left: 1075px;
   top: 588px;
 
-  background: #7695EC;
+  
+
+  ${({ background }) => background && css`
+    background: ${background};
+  `}
+
   border-radius: 8px;
 
   align-self: flex-end;
 
-  color: #FFF;
+  ${({ color }) => color && css`
+    color: ${color};
+  `}
+
   font-style: normal;
   font-weight: 700;
   font-size: 16px;

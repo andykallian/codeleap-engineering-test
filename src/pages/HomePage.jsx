@@ -8,6 +8,7 @@ import {
   LabelContainer,
   InputContainer,
   ButtonContainer,
+  FlexWrapper
   
 } from '../components/Styles';
 
@@ -21,7 +22,7 @@ const HomePage = () => {
     setUsername(e.target.value);
   };
 
-  const handleButtonClick = () => {
+  const handleLogin = () => {
     if (username !== '') {
       console.log('Username entered:', username);
 
@@ -35,16 +36,23 @@ const HomePage = () => {
     }
   };
 
+  const handleRegister = () =>{
+    navigate('/codeleap-engineering-test/create-user');
+  }
+
   return (
     <LoginContainer>
       <TitleContainer>Welcome to CodeLeap Network</TitleContainer>
       <LabelContainer>Please enter your username:</LabelContainer>
       <InputContainer type="text" placeholder="John Doe" value={username} onChange={handleInputChange} />
-      <ButtonContainer disabled={username === ''} onClick={handleButtonClick}>
-        ENTER
-      </ButtonContainer>
+      <FlexWrapper justifycontent={'flex-end'} gap={'10px'}>
+        <ButtonContainer color={`#000000`} background={'#FFFFFF'}  onClick={handleRegister}>REGISTER</ButtonContainer>
+        <ButtonContainer disabled={username === ''} color={'#FFFFFF'} background={'#7695EC'} onClick={handleLogin}>ENTER</ButtonContainer>
+      </FlexWrapper>
     </LoginContainer>
   );
 };
 
 export default HomePage;
+
+
