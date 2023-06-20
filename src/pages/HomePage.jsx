@@ -29,7 +29,7 @@ const HomePage = () => {
       if (usernames.includes(username)) {
         addUser(username);
         setCurrentUsername(username); // Definir o usuário atual
-        navigate('/main');
+        navigate('/codeleap-engineering-test/main');
       } else {
         console.log('Invalid username');
       }
@@ -37,7 +37,7 @@ const HomePage = () => {
   };
 
   const handleRegister = () =>{
-    navigate('/create-user');
+    navigate('/codeleap-engineering-test/create-user');
   }
 
   return (
