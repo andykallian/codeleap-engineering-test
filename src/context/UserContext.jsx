@@ -3,7 +3,7 @@ import React, { createContext, useState, useEffect } from 'react';
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-  const [usernames, setUsernames] = useState(['AndyKallian']);
+  const [usernames, setUsernames] = useState(['Admin']);
   const [currentUser, setCurrentUser] = useState('');
 
   useEffect(() => {
