@@ -21,6 +21,7 @@ const CreateUser = () => {
 
   const handleRegister = () => {
     newUser !== '' && addUser(newUser)
+    setNewUser('')
     navigate('/codeleap-engineering-test');
   };
 
