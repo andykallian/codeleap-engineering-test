@@ -59,8 +59,6 @@ export const ButtonContainer = styled.button`
   left: 1075px;
   top: 588px;
 
-  
-
   ${({ background }) => background && css`
     background: ${background};
   `}
@@ -77,7 +75,12 @@ export const ButtonContainer = styled.button`
   font-weight: 700;
   font-size: 16px;
   line-height: 19px;
-  cursor: pointer;
+  cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
+
+  ${({ disabled }) => disabled && css`
+    background: #CCCCCC;
+    cursor: default;
+  `}
 `;
 
 

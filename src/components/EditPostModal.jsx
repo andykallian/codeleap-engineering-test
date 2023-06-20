@@ -90,8 +90,10 @@ const EditPostModal = ({ currentPost, closeModal }) => {
                         required
                     />
                 </FlexWrapper>
-                <Button color={'#000'} onClick={handleCancelClick}>Cancel</Button>
-                <Button color={'#FFFFFF'} background={'#47B960'} onClick={handleUpdatePost}>Update</Button>
+                <FlexWrapper justifycontent={'flex-end'} gap={'16px'}>
+                  <Button color={'#000'} onClick={handleCancelClick}>Cancel</Button>
+                  <Button color={'#FFFFFF'} background={'#47B960'} onClick={handleUpdatePost}>Update</Button>
+                </FlexWrapper>
             </FlexWrapper>
         </Form>  
     </ModalBackground>
