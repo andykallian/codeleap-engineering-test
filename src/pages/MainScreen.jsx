@@ -91,7 +91,7 @@ const MainScreen = () => {
         </TopRetangle>
         <Form width={'95%'}>
             <FlexWrapper gap={'20px'} background={'#FFFFFF'} padding={'16px'} borderradius={'16px'} direction={'column'} border={'1px solid #999999'}>
-                <NewPostQuestion>What's on your mind?</NewPostQuestion>
+                <NewPostQuestion>Hello, {currentUser}! What's on your mind?</NewPostQuestion>
 
                 <FlexWrapper direction={'column'}>
                     <NewPostTitleLabel htmlFor="postTitle">Title</NewPostTitleLabel>

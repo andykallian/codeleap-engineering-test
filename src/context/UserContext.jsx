@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 
 export const UserContext = createContext();
 
@@ -6,12 +6,20 @@ export const UserProvider = ({ children }) => {
   const [usernames, setUsernames] = useState(['AndyKallian']);
   const [currentUser, setCurrentUser] = useState('');
 
+  useEffect(() => {
+    const storedUser = localStorage.getItem('currentUser');
+    if (storedUser) {
+      setCurrentUser(storedUser);
+    }
+  }, []);
+
   const addUser = (newUsername) => {
     setUsernames([...usernames, newUsername]);
   };
 
   const setCurrentUsername = (username) => {
     setCurrentUser(username);
+    localStorage.setItem('currentUser', username);
   };
 
   return (

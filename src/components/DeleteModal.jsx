@@ -13,8 +13,8 @@ const DeleteModal = ({ setShowModal, postId }) => {
 
   const handleDeleteClick = async () => {
     setIsDeleting(true);
-    console.log(postId);
     try {
+      
       await deletePost(postId);
       console.log('Post excluído com sucesso');
       setShowModal(false);
