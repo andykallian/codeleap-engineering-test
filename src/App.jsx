@@ -36,7 +36,7 @@ function App() {
     <HashRouter>
       <UserProvider>
         <Routes>
-          <Route path="/codeleap-engineering-test" element={<HomePage />} />
+          <Route path="/codeleap-engineering-test/#/codeleap-engineering-test" element={<HomePage />} />
           <Route path="/main" element={<MainScreen />} />
           <Route path="/create-user" element={<CreateUser />} />
           <Route path="*" element={<NotFound />} />
