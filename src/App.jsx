@@ -3,12 +3,12 @@ import MainScreen from './pages/MainScreen';
 import CreateUser from './pages/CreateUser';
 import NotFound from './pages/NotFound';
 
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import { UserProvider } from './context/UserContext';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <UserProvider>
         <Routes>
           <Route path="/codeleap-engineering-test" element={<HomePage />} />
@@ -17,7 +17,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </UserProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
