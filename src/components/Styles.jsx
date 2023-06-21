@@ -255,8 +255,8 @@ export const NewPostContentLabel = styled.label`
 `
 
 export const NewPostInputTitle = styled.input`
-
-  background: #FFFFFF;
+  background: ${({ titleError }) => (titleError ? '#ffcccc' : '#FFFFFF')};
+  transition: background-color 0.3s ease;
   border: 1px solid #777777;
   border-radius: 8px;
   height: 32px;
@@ -264,7 +264,8 @@ export const NewPostInputTitle = styled.input`
 `
 
 export const NewPostTextareaContent = styled.textarea`
-  background: #FFFFFF;
+  background: ${({ contentError }) => (contentError ? '#ffcccc' : '#FFFFFF')};
+  transition: background-color 0.3s ease;
   border: 1px solid #777777;
   border-radius: 8px;
   height: 74px;
