@@ -6,6 +6,7 @@
    1rem = 10px *
   my monitor resolution: 1360x768. 136rem x 76,8rem = */
   display: flex;
+  justify-content: center;
   
 }
 

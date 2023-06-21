@@ -19,6 +19,10 @@ export const LoginContainer = styled.div`
   background: #FFFFFF;
   border: 1px solid #CCCCCC;
   border-radius: 16px;
+
+  @media (max-width: 420px) {
+    width: 100%;
+  }
 `;
 
 export const TitleContainer = styled.h1`
@@ -145,6 +149,10 @@ export const FlexWrapper = styled.div`
   ${({ border }) => border && css`
     border: ${border};
   `}
+
+  @media (max-width: 420px) {
+    width: 100%;
+  }
 `;
 
 
@@ -177,6 +185,10 @@ export const TopRetangle = styled.div`
 
   background: #7695EC;
 
+  @media (max-width: 420px) {
+    padding: 27px 12px;
+  }
+
 `
 
 export const TopRetanglePost = styled.div`
@@ -199,6 +211,11 @@ export const TopRetanglePost = styled.div`
 
 
   border-radius: 16px 16px 0 0;
+
+  @media (max-width: 420px) {
+    gap: 72%;
+  }
+  
 
 `
 
@@ -232,6 +249,10 @@ export const NewPostQuestion = styled.h2`
   ${({ marginbotton }) => marginbotton && css`
     margin-bottom: ${marginbotton};
   `}
+
+  @media (max-width: 420px) {
+    font-size: 19px;
+  }
 `
 
 export const NewPostTitleLabel = styled.label`
