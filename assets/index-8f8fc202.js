@@ -82,6 +82,10 @@ Error generating stack: `+o.message+`
   background: #FFFFFF;
   border: 1px solid #CCCCCC;
   border-radius: 16px;
+
+  @media (max-width: 420px) {
+    width: 100%;
+  }
 `,lm=J.h1`
 
 
@@ -190,6 +194,10 @@ Error generating stack: `+o.message+`
   ${({border:e})=>e&&de`
     border: ${e};
   `}
+
+  @media (max-width: 420px) {
+    width: 100%;
+  }
 `,um=J.h1`
 
   word-wrap: break-word;
@@ -214,6 +222,10 @@ Error generating stack: `+o.message+`
 
   background: #7695EC;
 
+  @media (max-width: 420px) {
+    padding: 27px 12px;
+  }
+
 `,j1=J.div`
 
 
@@ -234,6 +246,11 @@ Error generating stack: `+o.message+`
 
 
   border-radius: 16px 16px 0 0;
+
+  @media (max-width: 420px) {
+    gap: 72%;
+  }
+  
 
 `,cm=J.form`
 
@@ -262,6 +279,10 @@ Error generating stack: `+o.message+`
   ${({marginbotton:e})=>e&&de`
     margin-bottom: ${e};
   `}
+
+  @media (max-width: 420px) {
+    font-size: 19px;
+  }
 `,fm=J.label`
 
   font-style: normal;
