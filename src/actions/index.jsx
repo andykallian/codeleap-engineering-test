@@ -25,8 +25,6 @@ export const createPost = async (postData) => {
     });
 
     if (response.ok) {
-      // Post criado com sucesso
-      console.log('Post criado com sucesso');
       return response.json(); // Retornar os dados da resposta
     } else {
       // Erro ao criar o post
@@ -52,8 +50,6 @@ export const updatePost = async (postId, postData) => {
     });
 
     if (response.ok) {
-      // Post atualizado com sucesso
-      console.log('Post atualizado com sucesso');
       return response.json(); // Retornar os dados da resposta
     } else {
       // Erro ao atualizar o post
@@ -75,7 +71,6 @@ export const deletePost = async (postId) => {
     });
 
     if (response.ok) {
-      console.log('Post excluído com sucesso');
       return true;
     } else {
       console.error('Erro ao excluir o post:', response.status);

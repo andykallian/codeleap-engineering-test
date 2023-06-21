@@ -120,6 +120,7 @@ const MainScreen = () => {
                       onChange={(e) => setNewPostTitle(e.target.value)}
                       required
                       style={{ backgroundColor: isTitleEmpty ? '#FFD2D2' : '#FFFFFF' }}
+                      onBlur={() => {setIsTitleEmpty(false)}}
                     />
                 </FlexWrapper>
 
@@ -133,6 +134,7 @@ const MainScreen = () => {
                       onChange={(e) => setNewPostContent(e.target.value)}
                       required
                       style={{ backgroundColor: isContentEmpty ? '#FFD2D2' : '#FFFFFF' }}
+                      onBlur={() => {setIsContentEmpty(false)}}
                     />
                 </FlexWrapper>
                 <Button background={'#7695EC'} color={'#FFFFFF'}onClick={handleCreatePost}>CREATE</Button>
